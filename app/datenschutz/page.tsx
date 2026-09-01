@@ -9,8 +9,8 @@ export default function Datenschutz() {
   return (
     <main className="legal-page">
       <header className="legal-header">
-        <a href="/" aria-label="Zurück zur Startseite"><img src="/house-of-hesha-logo.svg" alt="House of Hesha" /></a>
-        <a href="/">← Zurück zur Website</a>
+        <a href="./" aria-label="Zurück zur Startseite"><img src="./house-of-hesha-logo.svg" alt="House of Hesha" /></a>
+        <a href="./">← Zurück zur Website</a>
       </header>
       <div className="legal-content">
         <div>
