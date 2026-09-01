@@ -39,6 +39,9 @@ jobs:
         env:
           GITHUB_PAGES: 'true'
 
+      - name: Place assets at the Pages URL path
+        run: mv dist/client/house-of-hesha/_next dist/client/_next
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
