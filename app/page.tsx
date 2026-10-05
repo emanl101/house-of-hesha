@@ -3,9 +3,9 @@
 import { useState } from 'react';
 
 const services = [
-  { title: 'Schnitt & Styling', text: 'Typgerechte Schnitte, die zu dir, deiner Haarstruktur und deinem Alltag passen.' },
-  { title: 'Farbe & Veredelung', text: 'Individuelle Colorationen, Glossings und moderne Farbtechniken mit Gefühl für Nuancen.' },
-  { title: 'Balayage & Blond', text: 'Softe Übergänge, leuchtende Blondtöne und natürliche Ergebnisse mit gesundem Glanz.' },
+  { title: 'Schnitt & Styling', text: 'Typgerechte Schnitte, die zu dir, deiner Haarstruktur und deinem Alltag passen.', priceIndex: 0 },
+  { title: 'Farbe & Veredelung', text: 'Individuelle Colorationen, Glossings und moderne Farbtechniken mit Gefühl für Nuancen.', priceIndex: 2 },
+  { title: 'Balayage & Blond', text: 'Softe Übergänge, leuchtende Blondtöne und natürliche Ergebnisse mit gesundem Glanz.', priceIndex: 4 },
 ];
 
 const priceGroups = [
@@ -66,6 +66,11 @@ export default function Home() {
     'Mein neuer Lieblingssalon in München – elegant, herzlich und fachlich auf höchstem Niveau.',
   ];
 
+  const showPriceGroup = (priceIndex: number) => {
+    setOpenPrice(priceIndex);
+    document.getElementById('preise')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <main>
       <header className="header">
@@ -90,8 +95,7 @@ export default function Home() {
 
       <section className="services" id="leistungen">
         <div className="section-head"><p className="section-no">02 / Expertise</p><h2>Schnitt. Farbe.<br /><i>Persönlichkeit.</i></h2></div>
-        <div className="service-list">{services.map((service, i) => <article key={service.title}><span>0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><b>↗</b></article>)}</div>
-        <p className="note">Unser aktuelles Leistungsangebot richtet sich ausschließlich an Damen.</p>
+        <div className="service-list">{services.map((service, i) => <button className="service-card" type="button" key={service.title} onClick={() => showPriceGroup(service.priceIndex)} aria-label={`${service.title}: Preise anzeigen`}><span>0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><b>↘</b></button>)}</div>
       </section>
 
       <section className="gallery" id="galerie">
