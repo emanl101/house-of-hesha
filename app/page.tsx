@@ -9,6 +9,7 @@ const services = [
 ];
 
 const priceGroups = ['Schnitt & Styling', 'Color Services', 'Treatments'];
+const salonkeeUrl = 'https://www.salonkee.de/salon/house-of-hesha?lang=de';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Home() {
         <nav className={menuOpen ? 'nav open' : 'nav'}>
           <a onClick={() => setMenuOpen(false)} href="#salon">Salon</a><a onClick={() => setMenuOpen(false)} href="#leistungen">Leistungen</a><a onClick={() => setMenuOpen(false)} href="#galerie">Galerie</a><a onClick={() => setMenuOpen(false)} href="#kontakt">Kontakt</a>
         </nav>
-        <a className="book top-book" href="#preise">Termin buchen <span>↗</span></a>
+        <a className="book top-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a>
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü öffnen">{menuOpen ? '×' : '☰'}</button>
       </header>
 
@@ -56,7 +57,7 @@ export default function Home() {
       </section>
 
       <section className="prices" id="preise">
-        <p className="section-no">04 / Preise</p><div className="prices-wrap"><h2>Unsere<br /><i>Services.</i></h2><div className="accordions">{priceGroups.map((group, i) => <div className="accordion" key={group}><button onClick={() => setOpenPrice(openPrice === i ? null : i)}><span>0{i + 1}</span>{group}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content"><p>Leistungen und Preise werden ergänzt.</p><span>Preis folgt</span></div>}</div>)}<a className="book dark-book" href="mailto:kontakt@houseofhesha.de?subject=Terminanfrage">Termin anfragen <span>↗</span></a></div></div>
+        <p className="section-no">04 / Preise</p><div className="prices-wrap"><h2>Unsere<br /><i>Services.</i></h2><div className="accordions">{priceGroups.map((group, i) => <div className="accordion" key={group}><button onClick={() => setOpenPrice(openPrice === i ? null : i)}><span>0{i + 1}</span>{group}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content"><p>Leistungen und Preise werden ergänzt.</p><span>Preis folgt</span></div>}</div>)}<a className="book dark-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a></div></div>
       </section>
 
       <section className="reviews"><p className="section-no">05 / Stimmen</p><blockquote>“{reviews[review]}”</blockquote><div className="review-controls"><button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}>←</button><span>0{review + 1} / 03</span><button onClick={() => setReview((review + 1) % reviews.length)}>→</button></div><p className="note">Beispielbewertungen – werden durch echte Kundenstimmen ersetzt.</p></section>
@@ -71,7 +72,7 @@ export default function Home() {
       <section className="form-section"><div><p className="section-no">Kontakt</p><h2>Was dürfen wir<br />für dich tun?</h2></div><form onSubmit={(e) => e.preventDefault()}><label>Name<input required placeholder="Dein Name" /></label><label>E-Mail<input type="email" required placeholder="deine@email.de" /></label><label>Nachricht<textarea required placeholder="Erzähl uns von deinem Wunsch" /></label><button className="book" type="submit">Anfrage senden <span>↗</span></button></form></section>
 
       <footer><img src="./house-of-hesha-logo.svg" alt="House of Hesha" /><div><a href="#start">Nach oben ↑</a><a href="mailto:kontakt@houseofhesha.de">Kontakt</a><a href="./impressum">Impressum</a><a href="./datenschutz">Datenschutz</a></div><p>© 2026 House of Hesha · Website by <a href="https://artivum.de" target="_blank" rel="noreferrer">Artivum</a></p></footer>
-      <a className="floating-book" href="#preise">Jetzt buchen <span>↗</span></a><button className="whatsapp" onClick={() => alert('Die WhatsApp-Nummer wird ergänzt, sobald sie vorliegt.')} aria-label="WhatsApp öffnen">WA</button>
+      <a className="floating-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Jetzt buchen <span>↗</span></a><button className="whatsapp" onClick={() => alert('Die WhatsApp-Nummer wird ergänzt, sobald sie vorliegt.')} aria-label="WhatsApp öffnen">WA</button>
       {consent === null && <div className="cookie"><div><b>Deine Privatsphäre</b><p>Optionale Dienste wie Google Maps werden erst nach deiner Zustimmung geladen. Weitere Informationen findest du im <a href="./datenschutz">Datenschutz</a>.</p></div><button onClick={() => setConsent('essential')}>Nur notwendige</button><button className="accept" onClick={() => setConsent('all')}>Alle akzeptieren</button></div>}
     </main>
   );
