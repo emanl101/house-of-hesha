@@ -12,3 +12,6 @@ footer>p{font-size:11px}
 
 .service-list .service-card{width:100%;color:inherit;background:transparent;border:0;border-bottom:1px solid #ffffff30;display:grid;grid-template-columns:60px 1.5fr 1fr 30px;align-items:center;gap:30px;padding:37px 0;text-align:left;cursor:pointer;transition:.3s}.service-list .service-card:hover,.service-list .service-card:focus-visible{padding-left:18px;background:#ffffff08}.service-list .service-card:focus-visible{outline:1px solid #ffffff80;outline-offset:4px}
 @media(max-width:800px){.service-list .service-card{grid-template-columns:38px 1fr 20px;gap:12px}.service-list .service-card p{grid-column:2/4}}
+
+.price-tabs{display:flex;gap:10px;padding-top:55px}.price-tabs button{border:1px solid #9e9389;background:transparent;padding:12px 20px;text-transform:uppercase;letter-spacing:.13em;font-size:10px;cursor:pointer;transition:.2s}.price-tabs button:hover,.price-tabs button:focus-visible{border-color:var(--black)}.price-tabs button.active{background:var(--black);border-color:var(--black);color:#fff}.price-panel .accordions{padding-top:24px}
+@media(max-width:800px){.price-tabs{padding-top:10px}.price-tabs button{flex:1}}
