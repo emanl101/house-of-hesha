@@ -34,7 +34,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="start">
-        <div className="hero-copy"><p className="kicker">Hair Salon · Münchner Freiheit</p><h1>Dein Haar.<br /><span>Deine Handschrift.</span></h1><p>Präzise Schnitte, individuelle Farbe und ein Gespür für das, was dich ausmacht.</p><a href="#leistungen" className="outline-link">Salon entdecken <span>↓</span></a></div>
+        <div className="hero-copy"><p className="kicker">Hair Salon · Münchner Freiheit</p><h1>Your hair.<br /><span>Your style.<br />Your statement.</span></h1><p>Präzise Schnitte, individuelle Farbe und ein Gespür für das, was dich ausmacht.</p><a href="#leistungen" className="outline-link">Salon entdecken <span>↓</span></a></div>
         <div className="hero-visual placeholder"><span>Salonfotografie<br />folgt nach dem Umbau</span></div>
         <div className="opening"><span>Di–Fr 09–18 Uhr</span><span>Sa 09–15 Uhr</span></div>
       </section>
