@@ -9,3 +9,6 @@ footer>p{font-size:11px}
 
 .price-content{display:block;padding:0 0 26px 50px;color:#4f4841;font-size:13px}.price-row{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:11px 0;border-bottom:1px solid #cfc5bb}.price-row:last-child{border-bottom:0}.price-row span{line-height:1.4}.price-row strong{white-space:nowrap;font-size:13px;font-weight:600;color:var(--black)}
 @media(max-width:800px){.price-content{padding-left:38px}.accordion button{font-size:18px;grid-template-columns:38px 1fr auto}.price-row{gap:14px}}
+
+.service-list .service-card{width:100%;color:inherit;background:transparent;border:0;border-bottom:1px solid #ffffff30;display:grid;grid-template-columns:60px 1.5fr 1fr 30px;align-items:center;gap:30px;padding:37px 0;text-align:left;cursor:pointer;transition:.3s}.service-list .service-card:hover,.service-list .service-card:focus-visible{padding-left:18px;background:#ffffff08}.service-list .service-card:focus-visible{outline:1px solid #ffffff80;outline-offset:4px}
+@media(max-width:800px){.service-list .service-card{grid-template-columns:38px 1fr 20px;gap:12px}.service-list .service-card p{grid-column:2/4}}
