@@ -8,7 +8,51 @@ const services = [
   { title: 'Balayage & Blond', text: 'Softe Übergänge, leuchtende Blondtöne und natürliche Ergebnisse mit gesundem Glanz.' },
 ];
 
-const priceGroups = ['Schnitt & Styling', 'Color Services', 'Treatments'];
+const priceGroups = [
+  {
+    title: 'Waschen, Schneiden & Föhnen',
+    items: [
+      ['S', '49,00 €'],
+      ['M', '59,00 €'],
+      ['L', '69,00 €'],
+      ['XL', '79,00 €'],
+    ],
+  },
+  {
+    title: 'Waschen & Föhnen',
+    items: [
+      ['S', '26,00 €'],
+      ['M', '36,00 €'],
+      ['L', '46,00 €'],
+      ['XL', '56,00 €'],
+    ],
+  },
+  {
+    title: 'Farbe',
+    items: [
+      ['Komplettfarbe', 'ab 79,00 €'],
+      ['Ansatzfarbe', 'ab 49,00 €'],
+      ['Glossing', 'ab 49,00 €'],
+    ],
+  },
+  {
+    title: 'Strähnen',
+    items: [['Ganzer Kopf', 'ab 139,00 €']],
+  },
+  {
+    title: 'Balayage',
+    items: [
+      ['S (bis Kinn)', '249,00 €'],
+      ['M (bis Schulter)', '269,00 €'],
+      ['L (ab Schulter)', '289,00 €'],
+      ['XL (Überlänge)', '299,00 €'],
+    ],
+  },
+  {
+    title: 'Pflege',
+    items: [['Maske', '11,00 €']],
+  },
+];
 const salonkeeUrl = 'https://www.salonkee.de/salon/house-of-hesha?lang=de';
 
 export default function Home() {
@@ -47,7 +91,7 @@ export default function Home() {
       <section className="services" id="leistungen">
         <div className="section-head"><p className="section-no">02 / Expertise</p><h2>Schnitt. Farbe.<br /><i>Persönlichkeit.</i></h2></div>
         <div className="service-list">{services.map((service, i) => <article key={service.title}><span>0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><b>↗</b></article>)}</div>
-        <p className="note">Die vollständige Leistungsübersicht wird ergänzt, sobald sie vom Salon vorliegt.</p>
+        <p className="note">Unser aktuelles Leistungsangebot richtet sich ausschließlich an Damen.</p>
       </section>
 
       <section className="gallery" id="galerie">
@@ -57,7 +101,7 @@ export default function Home() {
       </section>
 
       <section className="prices" id="preise">
-        <p className="section-no">04 / Preise</p><div className="prices-wrap"><h2>Unsere<br /><i>Services.</i></h2><div className="accordions">{priceGroups.map((group, i) => <div className="accordion" key={group}><button onClick={() => setOpenPrice(openPrice === i ? null : i)}><span>0{i + 1}</span>{group}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content"><p>Leistungen und Preise werden ergänzt.</p><span>Preis folgt</span></div>}</div>)}<a className="book dark-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a></div></div>
+        <p className="section-no">04 / Preise · Damen</p><div className="prices-wrap"><h2>Damen-<br /><i>preise.</i></h2><div className="accordions">{priceGroups.map((group, i) => <div className="accordion" key={group.title}><button onClick={() => setOpenPrice(openPrice === i ? null : i)} aria-expanded={openPrice === i}><span>0{i + 1}</span>{group.title}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content">{group.items.map(([service, price]) => <div className="price-row" key={service}><span>{service}</span><strong>{price}</strong></div>)}</div>}</div>)}<a className="book dark-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a></div></div>
       </section>
 
       <section className="reviews"><p className="section-no">05 / Stimmen</p><blockquote>“{reviews[review]}”</blockquote><div className="review-controls"><button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}>←</button><span>0{review + 1} / 03</span><button onClick={() => setReview((review + 1) % reviews.length)}>→</button></div><p className="note">Beispielbewertungen – werden durch echte Kundenstimmen ersetzt.</p></section>
