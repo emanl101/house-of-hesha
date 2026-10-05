@@ -3,12 +3,11 @@
 import { useState } from 'react';
 
 const services = [
-  { title: 'Schnitt & Styling', text: 'Typgerechte Schnitte, die zu dir, deiner Haarstruktur und deinem Alltag passen.', priceIndex: 0 },
-  { title: 'Farbe & Veredelung', text: 'Individuelle Colorationen, Glossings und moderne Farbtechniken mit Gefühl für Nuancen.', priceIndex: 2 },
-  { title: 'Balayage & Blond', text: 'Softe Übergänge, leuchtende Blondtöne und natürliche Ergebnisse mit gesundem Glanz.', priceIndex: 4 },
+  { title: 'Damen', text: 'Schnitt, Styling, Farbe, Strähnen, Balayage und Pflege – individuell auf dich abgestimmt.', audience: 'damen' as const },
+  { title: 'Herren', text: 'Waschen, Schneiden und Föhnen für einen präzisen, typgerechten Look.', audience: 'herren' as const },
 ];
 
-const priceGroups = [
+const womenPriceGroups = [
   {
     title: 'Waschen, Schneiden & Föhnen',
     items: [
@@ -53,11 +52,18 @@ const priceGroups = [
     items: [['Maske', '11,00 €']],
   },
 ];
+const menPriceGroups = [
+  {
+    title: 'Waschen, Schneiden & Föhnen',
+    items: [['Herren', '35,00 €']],
+  },
+];
 const salonkeeUrl = 'https://www.salonkee.de/salon/house-of-hesha?lang=de';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openPrice, setOpenPrice] = useState<number | null>(null);
+  const [priceAudience, setPriceAudience] = useState<'damen' | 'herren'>('damen');
   const [review, setReview] = useState(0);
   const [consent, setConsent] = useState<'essential' | 'all' | null>(null);
   const reviews = [
@@ -66,10 +72,13 @@ export default function Home() {
     'Mein neuer Lieblingssalon in München – elegant, herzlich und fachlich auf höchstem Niveau.',
   ];
 
-  const showPriceGroup = (priceIndex: number) => {
-    setOpenPrice(priceIndex);
+  const showPrices = (audience: 'damen' | 'herren') => {
+    setPriceAudience(audience);
+    setOpenPrice(0);
     document.getElementById('preise')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+
+  const activePriceGroups = priceAudience === 'damen' ? womenPriceGroups : menPriceGroups;
 
   return (
     <main>
@@ -94,8 +103,8 @@ export default function Home() {
       </section>
 
       <section className="services" id="leistungen">
-        <div className="section-head"><p className="section-no">02 / Expertise</p><h2>Schnitt. Farbe.<br /><i>Persönlichkeit.</i></h2></div>
-        <div className="service-list">{services.map((service, i) => <button className="service-card" type="button" key={service.title} onClick={() => showPriceGroup(service.priceIndex)} aria-label={`${service.title}: Preise anzeigen`}><span>0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><b>↘</b></button>)}</div>
+        <div className="section-head"><p className="section-no">02 / Leistungen</p><h2>Damen. Herren.<br /><i>Persönlichkeit.</i></h2></div>
+        <div className="service-list">{services.map((service, i) => <button className="service-card" type="button" key={service.title} onClick={() => showPrices(service.audience)} aria-label={`${service.title}: Preise anzeigen`}><span>0{i + 1}</span><h3>{service.title}</h3><p>{service.text}</p><b>↘</b></button>)}</div>
       </section>
 
       <section className="gallery" id="galerie">
@@ -105,7 +114,7 @@ export default function Home() {
       </section>
 
       <section className="prices" id="preise">
-        <p className="section-no">04 / Preise · Damen</p><div className="prices-wrap"><h2>Damen-<br /><i>preise.</i></h2><div className="accordions">{priceGroups.map((group, i) => <div className="accordion" key={group.title}><button onClick={() => setOpenPrice(openPrice === i ? null : i)} aria-expanded={openPrice === i}><span>0{i + 1}</span>{group.title}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content">{group.items.map(([service, price]) => <div className="price-row" key={service}><span>{service}</span><strong>{price}</strong></div>)}</div>}</div>)}<a className="book dark-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a></div></div>
+        <p className="section-no">04 / Preise · {priceAudience === 'damen' ? 'Damen' : 'Herren'}</p><div className="prices-wrap"><h2>{priceAudience === 'damen' ? 'Damen-' : 'Herren-'}<br /><i>preise.</i></h2><div className="price-panel"><div className="price-tabs" aria-label="Preiskategorie"><button className={priceAudience === 'damen' ? 'active' : ''} type="button" onClick={() => { setPriceAudience('damen'); setOpenPrice(0); }}>Damen</button><button className={priceAudience === 'herren' ? 'active' : ''} type="button" onClick={() => { setPriceAudience('herren'); setOpenPrice(0); }}>Herren</button></div><div className="accordions">{activePriceGroups.map((group, i) => <div className="accordion" key={group.title}><button onClick={() => setOpenPrice(openPrice === i ? null : i)} aria-expanded={openPrice === i}><span>0{i + 1}</span>{group.title}<b>{openPrice === i ? '−' : '+'}</b></button>{openPrice === i && <div className="price-content">{group.items.map(([service, price]) => <div className="price-row" key={service}><span>{service}</span><strong>{price}</strong></div>)}</div>}</div>)}</div><a className="book dark-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Termin buchen <span>↗</span></a></div></div>
       </section>
 
       <section className="reviews"><p className="section-no">05 / Stimmen</p><blockquote>“{reviews[review]}”</blockquote><div className="review-controls"><button onClick={() => setReview((review + reviews.length - 1) % reviews.length)}>←</button><span>0{review + 1} / 03</span><button onClick={() => setReview((review + 1) % reviews.length)}>→</button></div><p className="note">Beispielbewertungen – werden durch echte Kundenstimmen ersetzt.</p></section>
