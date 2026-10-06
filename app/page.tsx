@@ -94,7 +94,7 @@ export default function Home() {
       <section className="hero" id="start">
         <div className="hero-copy"><p className="kicker">Hair Salon · Münchner Freiheit</p><h1>Your hair.<br /><span>Your style.<br />Your statement.</span></h1><p>Präzise Schnitte, individuelle Farbe und ein Gespür für das, was dich ausmacht.</p><a href="#leistungen" className="outline-link">Salon entdecken <span>↓</span></a></div>
         <div className="hero-visual placeholder"><span>Salonfotografie<br />folgt nach dem Umbau</span></div>
-        <div className="opening"><span>Di–Fr 09–18 Uhr</span><span>Sa 09–15 Uhr</span></div>
+        <div className="opening"><span>Mo geschlossen</span><span>Di–Fr 10–19 Uhr</span><span>Sa 09.30–15.30 Uhr</span></div>
       </section>
 
       <section className="intro reveal" id="salon">
@@ -122,7 +122,7 @@ export default function Home() {
       <section className="instagram"><div><p className="section-no">06 / Instagram</p><h2>Follow the<br /><i>transformation.</i></h2><a href="https://www.instagram.com/hairbyhesha?igsi=a25lYnR6cDZ4MDQ3" target="_blank" rel="noreferrer">@hairbyhesha ↗</a></div><div className="insta-grid">{[1,2,3].map(n => <a key={n} href="https://www.instagram.com/hairbyhesha?igsi=a25lYnR6cDZ4MDQ3" target="_blank" rel="noreferrer"><span>Instagram Post {n}</span></a>)}</div></section>
 
       <section className="contact" id="kontakt">
-        <div className="contact-copy"><p className="section-no">07 / Besuch uns</p><h2>Wir freuen uns<br />auf <i>dich.</i></h2><address>Arthur-Kutscher-Platz 3<br />80802 München<br /><small>Nahe Münchner Freiheit</small></address><a href="mailto:kontakt@houseofhesha.de">kontakt@houseofhesha.de ↗</a><div className="hours"><span>Dienstag – Freitag</span><b>09.00 – 18.00 Uhr</b><span>Samstag</span><b>09.00 – 15.00 Uhr</b></div></div>
+        <div className="contact-copy"><p className="section-no">07 / Besuch uns</p><h2>Wir freuen uns<br />auf <i>dich.</i></h2><address>Arthur-Kutscher-Platz 3<br />80802 München<br /><small>Nahe Münchner Freiheit</small></address><a href="mailto:kontakt@houseofhesha.de">kontakt@houseofhesha.de ↗</a><div className="hours"><span>Montag</span><b>Geschlossen</b><span>Dienstag – Freitag</span><b>10.00 – 19.00 Uhr</b><span>Samstag</span><b>09.30 – 15.30 Uhr</b></div></div>
         <div className="map">{consent === 'all' ? <iframe title="Standort House of Hesha" loading="lazy" src="https://www.google.com/maps?q=Arthur-Kutscher-Platz%203%2C%2080802%20M%C3%BCnchen&output=embed" /> : <div className="map-consent"><span>Standort</span><b>Google Maps ist deaktiviert.</b><p>Mit dem Laden der Karte stimmst du der Übertragung von Daten an Google zu.</p><button onClick={() => setConsent('all')}>Karte laden</button></div>}</div>
       </section>
 
