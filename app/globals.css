@@ -15,3 +15,5 @@ footer>p{font-size:11px}
 
 .price-tabs{display:flex;gap:10px;padding-top:55px}.price-tabs button{border:1px solid #9e9389;background:transparent;padding:12px 20px;text-transform:uppercase;letter-spacing:.13em;font-size:10px;cursor:pointer;transition:.2s}.price-tabs button:hover,.price-tabs button:focus-visible{border-color:var(--black)}.price-tabs button.active{background:var(--black);border-color:var(--black);color:#fff}.price-panel .accordions{padding-top:24px}
 @media(max-width:800px){.price-tabs{padding-top:10px}.price-tabs button{flex:1}}
+
+.contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.contact-links a{font-size:13px;border-bottom:1px solid;padding-bottom:7px}
