@@ -27,6 +27,10 @@ export default function Impressum() {
             <p>E-Mail: <a href="mailto:kontakt.houseofhesha@gmail.com">kontakt.houseofhesha@gmail.com</a><br />Telefon: <a href="tel:+498955897553">089 558 975 53</a></p>
           </section>
           <section>
+            <h2>Umsatzsteuer-ID</h2>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />DE465436274</p>
+          </section>
+          <section>
             <h2>Website</h2>
             <p>Konzeption, Gestaltung und technische Betreuung:<br /><a href="https://artivum.de" target="_blank" rel="noreferrer">Artivum</a></p>
           </section>
