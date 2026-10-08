@@ -20,7 +20,7 @@ const womenPriceGroups = [
   {
     title: 'Waschen & Föhnen',
     items: [
-      ['S', '26,00 €'],
+      ['S', '29,00 €'],
       ['M', '36,00 €'],
       ['L', '46,00 €'],
       ['XL', '56,00 €'],
@@ -30,13 +30,13 @@ const womenPriceGroups = [
     title: 'Farbe',
     items: [
       ['Komplettfarbe', 'ab 79,00 €'],
-      ['Ansatzfarbe', 'ab 49,00 €'],
+      ['Ansatzfarbe', 'ab 59,00 €'],
       ['Glossing', 'ab 49,00 €'],
     ],
   },
   {
-    title: 'Strähnen',
-    items: [['Ganzer Kopf', 'ab 139,00 €']],
+    title: 'Strähnen, Glossing',
+    items: [['Ganzer Kopf', 'ab 199,00 €']],
   },
   {
     title: 'Balayage',
