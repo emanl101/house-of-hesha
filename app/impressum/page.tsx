@@ -24,7 +24,7 @@ export default function Impressum() {
           </section>
           <section>
             <h2>Kontakt</h2>
-            <p>E-Mail: <a href="mailto:kontakt@houseofhesha.de">kontakt@houseofhesha.de</a><br />Telefon: wird ergänzt</p>
+            <p>E-Mail: <a href="mailto:kontakt.houseofhesha@gmail.com">kontakt.houseofhesha@gmail.com</a><br />Telefon: <a href="tel:+498955897553">089 558 975 53</a></p>
           </section>
           <section>
             <h2>Website</h2>
