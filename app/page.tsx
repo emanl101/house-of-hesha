@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 const services = [
-  { title: 'Damen', text: 'Schnitt, Styling, Farbe, Strähnen, Balayage und Pflege – individuell auf dich abgestimmt.', audience: 'damen' as const },
+  { title: 'Damen', text: 'Schnitt, Styling, Farbe, Strähnen, Balayage und Kosmetik – individuell auf dich abgestimmt.', audience: 'damen' as const },
   { title: 'Herren', text: 'Waschen, Schneiden und Föhnen für einen präzisen, typgerechten Look.', audience: 'herren' as const },
 ];
 
@@ -20,7 +20,7 @@ const womenPriceGroups = [
   {
     title: 'Waschen & Föhnen',
     items: [
-      ['S', '29,00 €'],
+      ['S', '26,00 €'],
       ['M', '36,00 €'],
       ['L', '46,00 €'],
       ['XL', '56,00 €'],
@@ -30,13 +30,13 @@ const womenPriceGroups = [
     title: 'Farbe',
     items: [
       ['Komplettfarbe', 'ab 79,00 €'],
-      ['Ansatzfarbe', 'ab 59,00 €'],
+      ['Ansatzfarbe', 'ab 49,00 €'],
       ['Glossing', 'ab 49,00 €'],
     ],
   },
   {
-    title: 'Strähnen, Glossing',
-    items: [['Ganzer Kopf', 'ab 199,00 €']],
+    title: 'Strähnen',
+    items: [['Ganzer Kopf', 'ab 139,00 €']],
   },
   {
     title: 'Balayage',
@@ -48,8 +48,11 @@ const womenPriceGroups = [
     ],
   },
   {
-    title: 'Pflege',
-    items: [['Maske', '11,00 €']],
+    title: 'Kosmetik',
+    items: [
+      ['Augenbrauen zupfen', '15,00 €'],
+      ['Augenbrauen färben', '15,00 €'],
+    ],
   },
 ];
 const menPriceGroups = [
