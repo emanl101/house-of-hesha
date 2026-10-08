@@ -20,7 +20,7 @@ export default function Datenschutz() {
         <div className="legal-copy">
           <section>
             <h2>1. Verantwortliche Stelle</h2>
-            <p>House of Hesha<br />Falak Ibrahim Abdi<br />Arthur-Kutscher-Platz 3<br />80802 München<br />E-Mail: <a href="mailto:kontakt@houseofhesha.de">kontakt@houseofhesha.de</a></p>
+            <p>House of Hesha<br />Falak Ibrahim Abdi<br />Arthur-Kutscher-Platz 3<br />80802 München<br />E-Mail: <a href="mailto:kontakt.houseofhesha@gmail.com">kontakt.houseofhesha@gmail.com</a><br />Telefon: <a href="tel:+498955897553">089 558 975 53</a></p>
           </section>
           <section>
             <h2>2. Allgemeine Hinweise</h2>
