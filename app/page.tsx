@@ -7,6 +7,18 @@ const services = [
   { title: 'Herren', text: 'Waschen, Schneiden und Föhnen für einen präzisen, typgerechten Look.', audience: 'herren' as const },
 ];
 
+const galleryImages = [
+  { src: './images/salon-aussenansicht.jpg', alt: 'Außenschild von House of Hesha in München', label: 'House of Hesha' },
+  { src: './images/salonschild.jpg', alt: 'Salonschild von House of Hesha', label: 'Münchner Freiheit' },
+  { src: './images/beratung-haarschnitt.jpg', alt: 'Persönliche Haarberatung im Salon', label: 'Beratung' },
+  { src: './images/haarschnitt-im-salon.jpg', alt: 'Haarschnitt bei House of Hesha', label: 'Schnitt' },
+  { src: './images/haarprodukte.jpg', alt: 'Professionelle Haarpflegeprodukte im Salon', label: 'Pflegeprodukte' },
+  { src: './images/arbeitsplatz.jpg', alt: 'Vorbereiteter Arbeitsplatz im Friseursalon', label: 'Handwerk' },
+  { src: './images/friseurwerkzeuge.jpg', alt: 'Professionelle Friseurwerkzeuge', label: 'Präzision' },
+  { src: './images/produktregal.jpg', alt: 'Produktregal bei House of Hesha', label: 'Produkte' },
+  { src: './images/lounge.jpg', alt: 'Eleganter Wartebereich im Salon', label: 'Lounge' },
+];
+
 const womenPriceGroups = [
   {
     title: 'Waschen, Schneiden & Föhnen',
@@ -96,7 +108,7 @@ export default function Home() {
 
       <section className="hero" id="start">
         <div className="hero-copy"><p className="kicker">Hair Salon · Münchner Freiheit</p><h1>Your hair.<br /><span>Your style.<br />Your statement.</span></h1><p>Präzise Schnitte, individuelle Farbe und ein Gespür für das, was dich ausmacht.</p><a href="#leistungen" className="outline-link">Salon entdecken <span>↓</span></a></div>
-        <div className="hero-visual placeholder"><span>Salonfotografie<br />folgt nach dem Umbau</span></div>
+        <div className="hero-visual"><img src="./images/salon-hero.jpg" alt="Salonbereich von House of Hesha" fetchPriority="high" /></div>
         <div className="opening"><span>Mo geschlossen</span><span>Di–Fr 10–19 Uhr</span><span>Sa 09.30–15.30 Uhr</span></div>
       </section>
 
@@ -112,8 +124,7 @@ export default function Home() {
 
       <section className="gallery" id="galerie">
         <div className="section-head dark"><p className="section-no">03 / Galerie</p><h2>Looks, die<br /><i>bleiben.</i></h2></div>
-        <div className="gallery-grid"><div className="photo-placeholder tall">01 <span>Vorher / Nachher</span></div><div className="photo-placeholder">02 <span>Coloration</span></div><div className="photo-placeholder">03 <span>Salon</span></div></div>
-        <p className="gallery-note">Echte Salon- und Ergebnisfotos folgen nach dem Umbau.</p>
+        <div className="gallery-grid">{galleryImages.map((photo, index) => <figure className={index === 0 || index === 4 ? 'gallery-item featured' : 'gallery-item'} key={photo.src}><img src={photo.src} alt={photo.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, '0')}</span>{photo.label}</figcaption></figure>)}</div>
       </section>
 
       <section className="prices" id="preise">
