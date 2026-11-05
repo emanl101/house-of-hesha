@@ -43,8 +43,8 @@ export default function Datenschutz() {
             <p>Derzeit wird Instagram nur über externe Links geöffnet; es werden keine Beiträge direkt eingebettet. Bei einem Klick verlässt du diese Website. Eine spätere Einbettung von Instagram-Inhalten erfolgt ausschließlich nach entsprechender Einwilligung und wird in dieser Erklärung ergänzt.</p>
           </section>
           <section>
-            <h2>7. Analyse, WhatsApp und Salonkee</h2>
-            <p>Google Analytics und WhatsApp sind in der aktuellen Vorschau noch nicht technisch eingebunden. Für die Online-Terminbuchung wird über externe Links auf Salonkee weitergeleitet. Beim Öffnen des Buchungslinks gelten die Datenschutzbestimmungen von Salonkee. Vor dem finalen Launch werden Anbieter, Zweck, Rechtsgrundlage, Speicherdauer und mögliche Datenübermittlungen in der Datenschutzerklärung vollständig ergänzt.</p>
+            <h2>7. Analyse und Salonkee</h2>
+            <p>Google Analytics ist in der aktuellen Vorschau noch nicht technisch eingebunden. Für die Online-Terminbuchung wird über externe Links auf Salonkee weitergeleitet. Beim Öffnen des Buchungslinks gelten die Datenschutzbestimmungen von Salonkee. Vor dem finalen Launch werden Anbieter, Zweck, Rechtsgrundlage, Speicherdauer und mögliche Datenübermittlungen in der Datenschutzerklärung vollständig ergänzt.</p>
           </section>
           <section>
             <h2>8. Deine Rechte</h2>
