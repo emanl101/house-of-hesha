@@ -143,7 +143,7 @@ export default function Home() {
       <section className="form-section"><div><p className="section-no">Kontakt</p><h2>Was dürfen wir<br />für dich tun?</h2></div><form onSubmit={(e) => e.preventDefault()}><label>Name<input required placeholder="Dein Name" /></label><label>E-Mail<input type="email" required placeholder="deine@email.de" /></label><label>Nachricht<textarea required placeholder="Erzähl uns von deinem Wunsch" /></label><button className="book" type="submit">Anfrage senden <span>↗</span></button></form></section>
 
       <footer><img src="./house-of-hesha-logo.svg" alt="House of Hesha" /><div><a href="#start">Nach oben ↑</a><a href="mailto:kontakt.houseofhesha@gmail.com">E-Mail</a><a href="tel:+498955897553">Telefon</a><a href="./impressum">Impressum</a><a href="./datenschutz">Datenschutz</a></div><p>© 2026 House of Hesha · Website by <a href="https://artivum.de" target="_blank" rel="noreferrer">Artivum</a></p></footer>
-      <a className="floating-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Jetzt buchen <span>↗</span></a><button className="whatsapp" onClick={() => alert('Die WhatsApp-Nummer wird ergänzt, sobald sie vorliegt.')} aria-label="WhatsApp öffnen">WA</button>
+      <a className="floating-book" href={salonkeeUrl} target="_blank" rel="noreferrer">Jetzt buchen <span>↗</span></a>
       {consent === null && <div className="cookie"><div><b>Deine Privatsphäre</b><p>Optionale Dienste wie Google Maps werden erst nach deiner Zustimmung geladen. Weitere Informationen findest du im <a href="./datenschutz">Datenschutz</a>.</p></div><button onClick={() => setConsent('essential')}>Nur notwendige</button><button className="accept" onClick={() => setConsent('all')}>Alle akzeptieren</button></div>}
     </main>
   );
